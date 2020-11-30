@@ -8,6 +8,14 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 if not discord.opus.is_loaded():
     discord.opus.load_opus("heroku-buildpack-libopus")
+    
+    @bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+    
+    @bot.command()
+async def neko(ctx):
+    await ctx.send('にゃ～ん')
 
 @bot.command(aliases=["connect","summon"]) #connectやsummonでも呼び出せる
 async def join(ctx):
